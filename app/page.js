@@ -1,7 +1,8 @@
+import Header from "@/components/Header";
 export default function Home() {
   return (
-    <>
-      <p>Home Pae</p>
-    </>
+    <div>
+      <Header />
+    </div>
   );
 }
