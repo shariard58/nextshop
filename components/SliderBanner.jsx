@@ -2,7 +2,6 @@
 /* eslint-disable react/jsx-no-undef */
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 export default function SliderBanner() {
   const settings = {
@@ -16,27 +15,55 @@ export default function SliderBanner() {
   return (
     <Slider {...settings}>
       <div>
-        <img className="h-[500px]" src="/images/banner.jpg" alt="img" />
+        <img
+          className="md:h-[500px] lg:h-[600px]"
+          src="/images/banner.jpg"
+          alt="img"
+        />
       </div>
       <div>
-        <img className="h-[500px]" src="/images/banner.jpg" alt="img" />
+        <img
+          className="md:h-[500px] lg:h-[600px]"
+          src="/images/banner.jpg"
+          alt="img"
+        />
       </div>
       <div>
-        <img className="h-[500px]" src="/images/banner.jpg" alt="img" />
+        <img
+          className="md:h-[500px] lg:h-[600px]"
+          src="/images/banner.jpg"
+          alt="img"
+        />
       </div>
 
       <div>
-        <img className="h-[500px]" src="/images/banner.jpg" alt="img" />
+        <img
+          className="md:h-[500px] lg:h-[600px]"
+          src="/images/banner.jpg"
+          alt="img"
+        />
       </div>
       <div>
-        <img className="h-[500px]" src="/images/banner.jpg" alt="img" />
+        <img
+          className="md:h-[500px] lg:h-[600px]"
+          src="/images/banner.jpg"
+          alt="img"
+        />
       </div>
       <div>
-        <img className="h-[500px]" src="/images/banner.jpg" alt="img" />
+        <img
+          className="md:h-[500px] lg:h-[600px]"
+          src="/images/banner.jpg"
+          alt="img"
+        />
       </div>
 
       <div>
-        <img className="h-[500px]" src="/images/banner.jpg" alt="img" />
+        <img
+          className="md:h-[500px] lg:h-[600px]"
+          src="/images/banner.jpg"
+          alt="img"
+        />
       </div>
     </Slider>
   );
