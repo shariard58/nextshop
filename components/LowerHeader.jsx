@@ -18,7 +18,11 @@ export default function LowerHeader() {
             className="bg-[#EFF0F5] w-[90%] border-none outline-none focus:outline-none focus:border-none py-[8px] ml-[14px]  pr-[60px]"
           />
           <div className="absolute inset-y-0 right-0 bg-[#F97316] bg-orange px-4 flex items-center rounded-xl ">
-            <IoSearchOutline color="white" size={20} />
+            <IoSearchOutline
+              className="cursor-pointer"
+              color="white"
+              size={20}
+            />
           </div>
         </div>
 
