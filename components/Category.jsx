@@ -1,3 +1,5 @@
+import { AiOutlineProduct } from "react-icons/ai";
+import { MdKeyboardArrowRight } from "react-icons/md";
 export default function Category() {
   const demoCategory = [
     {
@@ -170,19 +172,28 @@ export default function Category() {
       {demoCategory && demoCategory.length > 0 && (
         <div className="bg-white shadow-md py-2 px-2 absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100 rounded-sm mt-[-2.5px] sm:w-[180px] md:w-[240px] lg:w-[270px]">
           {demoCategory.map((category) => (
-            <div key={category?.id} className="py-[4px] relative  group">
-              <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold">
-                {category.title}
-              </p>
+            <div key={category?.id} className="py-[4px] relative  ">
+              <div className="flex justify-between items-center">
+                <AiOutlineProduct size={20} />
+
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  {category.title}
+                </p>
+
+                {category.childrens && category?.childrens.length > 0 && (
+                  <MdKeyboardArrowRight
+                    className="cursor-pointer"
+                    color="orange"
+                    size={20}
+                  />
+                )}
+              </div>
+
               {category.childrens && category?.childrens.length > 0 && (
-                <div className="hidden right-0 group-hover:block absolute border border-black">
+                <div className="absolute left-full top-full  ml-[8px] bg-white shadow-md rounded-sm w-[200px] md:h-[500px]">
                   Duke
                 </div>
               )}
-
-              {/* <div className="bg-white shadow-md py-2 absolute transition-opacity duration-200 opacity-0 group-hover:opacity-100 rounded-sm sm:w-[180px] md:w-[240px] lg:w-[270px] left-full top-0 mt-[-2px]">
-                <p>This is sub Group</p>
-              </div> */}
             </div>
           ))}
         </div>
