@@ -1,6 +1,20 @@
+"use client";
+import { useState } from "react";
 import { AiOutlineProduct } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
 export default function Category() {
+  const [showCategories, setShowCategories] = useState(false);
+
+  // functoin for showing category
+  const handleShowCategory = () => {
+    setShowCategories(true);
+    console.log(showCategories);
+  };
+
+  // function for hiding category
+  const handleHideCategory = () => {
+    setShowCategories(false);
+  };
   const demoCategory = [
     {
       id: 1,
@@ -164,38 +178,158 @@ export default function Category() {
     },
   ];
   return (
-    <div className="relative group">
-      <button className="mt-4 py-2 px-6 bg-white text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200">
+    <div className="relative ">
+      <button
+        onMouseEnter={handleShowCategory}
+        className="mt-4 py-2 px-6 bg-white text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200"
+      >
         Category
       </button>
 
-      {demoCategory && demoCategory.length > 0 && (
-        <div className="bg-white shadow-md py-2 px-2 absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100 rounded-sm mt-[-2.5px] sm:w-[180px] md:w-[240px] lg:w-[270px]">
-          {demoCategory.map((category) => (
-            <div key={category?.id} className="py-[4px] relative  ">
-              <div className="flex justify-between items-center">
-                <AiOutlineProduct size={20} />
+      {showCategories && demoCategory && demoCategory.length > 0 && (
+        <div className="flex  absolute top-0 left-0 transition-opacity duration-200 mt-[-2.5px]">
+          <div
+            onMouseLeave={handleHideCategory}
+            className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px]"
+          >
+            <div className="border-r-[2px] border-r-gray-300">
+              {demoCategory.map((category) => (
+                <div key={category?.id} className="py-[4px] relative">
+                  <div className="flex justify-between items-center">
+                    <AiOutlineProduct size={20} />
 
+                    <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                      {category.title}
+                    </p>
+
+                    {category.childrens && category?.childrens.length > 0 && (
+                      <MdKeyboardArrowRight
+                        className="cursor-pointer"
+                        color="orange"
+                        size={20}
+                      />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px] border-r-gray-300 border-r-[2px]  ">
+            <div>
+              <div className="flex justify-between items-center py-[4px]">
                 <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
-                  {category.title}
+                  Sub Category
                 </p>
 
-                {category.childrens && category?.childrens.length > 0 && (
-                  <MdKeyboardArrowRight
-                    className="cursor-pointer"
-                    color="orange"
-                    size={20}
-                  />
-                )}
+                <MdKeyboardArrowRight
+                  className="cursor-pointer"
+                  color="orange"
+                  size={20}
+                />
               </div>
-
-              {category.childrens && category?.childrens.length > 0 && (
-                <div className="absolute left-full top-full  ml-[8px] bg-white shadow-md rounded-sm w-[200px] md:h-[500px]">
-                  Duke
-                </div>
-              )}
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
             </div>
-          ))}
+          </div>
+
+          <div className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px]">
+            <div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px] ">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px] ">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px] ">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+              <div className="flex justify-between items-center py-[4px]">
+                <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                  Sub Category
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
