@@ -168,16 +168,21 @@ export default function Category() {
       </button>
 
       {demoCategory && demoCategory.length > 0 && (
-        <div className="bg-white shadow-md py-2 px-2 absolute top-0 left-0  transition-opacity duration-200 opacity-0 group-hover:opacity-100 rounded-sm mt-[-2.5px] sm:w-[180px] md:w-[240px] lg:w-[270px]">
+        <div className="bg-white shadow-md py-2 px-2 absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100 rounded-sm mt-[-2.5px] sm:w-[180px] md:w-[240px] lg:w-[270px]">
           {demoCategory.map((category) => (
-            <div key={category?.id} className="py-[4px] relative group">
+            <div key={category?.id} className="py-[4px] relative  group">
               <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold">
                 {category.title}
               </p>
+              {category.childrens && category?.childrens.length > 0 && (
+                <div className="hidden right-0 group-hover:block absolute border border-black">
+                  Duke
+                </div>
+              )}
 
-              <div className="bg-white shadow-md py-2  absolute  transition-opacity duration-200 opacity-0 group-hover:opacity-100 rounded-sm  sm:w-[180px] md:w-[240px] lg:w-[270px] px-[280px]">
+              {/* <div className="bg-white shadow-md py-2 absolute transition-opacity duration-200 opacity-0 group-hover:opacity-100 rounded-sm sm:w-[180px] md:w-[240px] lg:w-[270px] left-full top-0 mt-[-2px]">
                 <p>This is sub Group</p>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
