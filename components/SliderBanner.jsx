@@ -21,63 +21,63 @@ export default function SliderBanner() {
           className="w-full relative h-full"
           src="/images/banner.jpg"
           alt="img"
-          height={500}
+          height={600}
           width={1600}
         />
       </div>
-      <div className="w-full relative h-[500px]">
+      <div className="w-full relative h-[600px]">
         <Image
           className="w-full relative h-full"
           src="/images/banner.jpg"
           alt="img"
-          height={500}
+          height={600}
           width={1600}
         />
       </div>
-      <div className="w-full relative h-[500px]">
+      <div className="w-full relative h-[600px]">
         <Image
           className="w-full relative h-full"
           src="/images/banner.jpg"
           alt="img"
-          height={500}
-          width={1600}
-        />
-      </div>
-
-      <div className="w-full relative h-[500px]">
-        <Image
-          className="w-full relative h-full"
-          src="/images/banner.jpg"
-          alt="img"
-          height={500}
-          width={1600}
-        />
-      </div>
-      <div className="w-full relative h-[500px]">
-        <Image
-          className="w-full relative h-full"
-          src="/images/banner.jpg"
-          alt="img"
-          height={500}
-          width={1600}
-        />
-      </div>
-      <div className="w-full relative h-[500px]">
-        <Image
-          className="w-full relative h-full"
-          src="/images/banner.jpg"
-          alt="img"
-          height={500}
+          height={600}
           width={1600}
         />
       </div>
 
-      <div className="w-full relative h-[500px]">
+      <div className="w-full relative h-[600px]">
         <Image
           className="w-full relative h-full"
           src="/images/banner.jpg"
           alt="img"
-          height={500}
+          height={600}
+          width={1600}
+        />
+      </div>
+      <div className="w-full relative h-[600px]">
+        <Image
+          className="w-full relative h-full"
+          src="/images/banner.jpg"
+          alt="img"
+          height={600}
+          width={1600}
+        />
+      </div>
+      <div className="w-full relative h-[600px]">
+        <Image
+          className="w-full relative h-full"
+          src="/images/banner.jpg"
+          alt="img"
+          height={600}
+          width={1600}
+        />
+      </div>
+
+      <div className="w-full relative h-[600px]">
+        <Image
+          className="w-full relative h-full"
+          src="/images/banner.jpg"
+          alt="img"
+          height={600}
           width={1600}
         />
       </div>
