@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
+import { months, yearArray } from "@/utils/data";
 import Image from "next/image";
 import { useState } from "react";
 import { FaRegEyeSlash } from "react-icons/fa6";
@@ -7,6 +8,9 @@ import { IoEyeOutline } from "react-icons/io5";
 export default function page() {
   const [visiblePassword, setVisiblePassword] = useState(false);
   const [visibleConfirmPassword, setVisibleConfirmPassword] = useState(false);
+  const [year, setYear] = useState("");
+  const [month, setMonth] = useState("");
+  const [day, setDay] = useState("");
   return (
     <div className="min-h-screen flex justify-center items-center bg-[#F0F0F0 px-4 ">
       <div className="w-full  sm:w-[80%] md:w-[60%]  lg:px-[74px] md:px-[60px]  lg:py-[40px] md:py-[36px] sm:py-[30px]  bg-white rounded-lg shadow-lg px-4">
@@ -117,6 +121,79 @@ export default function page() {
             <p className="text-[18px] md:text-[20px] text-[#F97316] font-bold md:text-end  text-left">
               Login
             </p>
+
+            <div className="w-full grid grid-cols-4  gap-[4px]">
+              <div className="col-span-3">
+                <p className="text-[14px] text-[#434343] mb-[8px]">Birthday</p>
+                <div className="flex gap-[4px] grid grid-cols-3">
+                  <select
+                    name="month"
+                    id="month"
+                    className="p-2 border rounded border-[#DFDFDF] col-span-1"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Month
+                    </option>
+
+                    {months?.map((m) => (
+                      <option key={m.value} value={m.value}>
+                        {m.month}
+                      </option>
+                    ))}
+                  </select>
+                  <select
+                    name="day"
+                    id="day"
+                    className="p-2 border rounded border-[ #DFDFDF] col-span-1"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Day
+                    </option>
+                    {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => (
+                      <option key={day} value={day}>
+                        {day}
+                      </option>
+                    ))}
+                  </select>
+                  <select
+                    name="year"
+                    id="year"
+                    className="p-2 border rounded border-[ #DFDFDF] col-span-1"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Year
+                    </option>
+                    {yearArray.map((year) => (
+                      <option key={year} value={year}>
+                        {year}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              <div className="col-span-1 ">
+                <p className="text-[#434343] mb-[6px]">Gender</p>
+                <select
+                  className="p-2 border rounded border-[ #DFDFDF]"
+                  name="gender"
+                  id="gender"
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Gender
+                  </option>
+                  <option value="male" disabled>
+                    Male
+                  </option>
+                  <option value="female" disabled>
+                    Femal
+                  </option>
+                </select>
+              </div>
+            </div>
 
             <button className="w-full border-none outline-none bg-[#F97316] transition duration-200 ease-in-out hover:bg-orange-400">
               <p className="text-white text-[16px] font-medium p-[16px]">
