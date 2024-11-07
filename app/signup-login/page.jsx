@@ -8,13 +8,35 @@ import { IoEyeOutline } from "react-icons/io5";
 export default function page() {
   const [visiblePassword, setVisiblePassword] = useState(false);
   const [visibleConfirmPassword, setVisibleConfirmPassword] = useState(false);
-  const [year, setYear] = useState("");
-  const [month, setMonth] = useState("");
-  const [day, setDay] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    phoneAndEmail: "",
+    password: "",
+    confirmpassword: "",
+    month: "",
+    day: "",
+    year: "",
+    gender: "",
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  console.log("The form data is now ", formData);
   return (
     <div className="min-h-screen flex justify-center items-center bg-[#F0F0F0 px-4 ">
       <div className="w-full  sm:w-[80%] md:w-[60%]  lg:px-[74px] md:px-[60px]  lg:py-[40px] md:py-[36px] sm:py-[30px]  bg-white rounded-lg shadow-lg px-4">
-        <form className="w-full flex flex-col  md:flex-row  lg:gap-[44px] md:gap-[30px] gap-[26px]  sm:mt-4 md:mt-0">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full flex flex-col  md:flex-row  lg:gap-[44px] md:gap-[30px] gap-[26px]  sm:mt-4 md:mt-0"
+        >
           <div className="space-y-4 md:flex-1 ">
             <div>
               <p className="md:text-[20px] text-[18px] font-bold">
@@ -28,10 +50,12 @@ export default function page() {
                 </label>
                 <input
                   type="text"
-                  name=""
+                  name="name"
                   id="name"
                   className="border border-gray-300 p-2"
                   placeholder="Enter you full name"
+                  required
+                  onChange={handleChange}
                 />
               </div>
 
@@ -41,11 +65,13 @@ export default function page() {
                 </label>
                 <input
                   type="text"
-                  name=""
+                  name="phoneAndEmail"
                   id="email"
                   className="border border-gray-300 p-2"
                   placeholder="Phone or Email"
                   pattern="(^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|org|net)$)|(^\d{10}$)"
+                  required
+                  onChange={handleChange}
                 />
               </div>
 
@@ -60,8 +86,11 @@ export default function page() {
                   <input
                     type={visiblePassword ? "text" : "password"}
                     id="password"
+                    name="password"
                     className="border border-gray-300 p-2 w-full pr-10"
                     placeholder="Please enter your password"
+                    required
+                    onChange={handleChange}
                   />
                   {visiblePassword ? (
                     <IoEyeOutline
@@ -89,10 +118,12 @@ export default function page() {
                 <div className="relative">
                   <input
                     type={visibleConfirmPassword ? "text" : "password"}
-                    name=""
+                    name="confirmpassword"
                     id="confirmPassword"
                     className="border border-gray-300 p-2 w-full"
                     placeholder="Confirm password"
+                    required
+                    onChange={handleChange}
                   />
 
                   {visibleConfirmPassword ? (
@@ -131,6 +162,8 @@ export default function page() {
                     id="month"
                     className="p-2 border rounded border-[#DFDFDF] col-span-1"
                     defaultValue=""
+                    required
+                    onChange={handleChange}
                   >
                     <option value="" disabled>
                       Month
@@ -147,6 +180,8 @@ export default function page() {
                     id="day"
                     className="p-2 border rounded border-[ #DFDFDF] col-span-1"
                     defaultValue=""
+                    required
+                    onChange={handleChange}
                   >
                     <option value="" disabled>
                       Day
@@ -162,6 +197,8 @@ export default function page() {
                     id="year"
                     className="p-2 border rounded border-[ #DFDFDF] col-span-1"
                     defaultValue=""
+                    onChange={handleChange}
+                    required
                   >
                     <option value="" disabled>
                       Year
@@ -180,22 +217,23 @@ export default function page() {
                   className="p-2 border rounded border-[ #DFDFDF]"
                   name="gender"
                   id="gender"
+                  required
                   defaultValue=""
+                  onChange={handleChange}
                 >
                   <option value="" disabled>
                     Gender
                   </option>
-                  <option value="male" disabled>
-                    Male
-                  </option>
-                  <option value="female" disabled>
-                    Femal
-                  </option>
+                  <option value="male">Male</option>
+                  <option value="female">Femal</option>
                 </select>
               </div>
             </div>
 
-            <button className="w-full border-none outline-none bg-[#F97316] transition duration-200 ease-in-out hover:bg-orange-400">
+            <button
+              type="submit"
+              className="w-full border-none outline-none bg-[#F97316] transition duration-200 ease-in-out hover:bg-orange-400"
+            >
               <p className="text-white text-[16px] font-medium p-[16px]">
                 Sign Up
               </p>
