@@ -2,10 +2,13 @@
 "use client";
 import { months, yearArray } from "@/utils/data";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { IoEyeOutline } from "react-icons/io5";
+import { toast } from "react-toastify";
 export default function page() {
+  const router = useRouter();
   const [visiblePassword, setVisiblePassword] = useState(false);
   const [visibleConfirmPassword, setVisibleConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -18,6 +21,8 @@ export default function page() {
     year: "",
     gender: "",
   });
+  const passwordPattern =
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -27,6 +32,21 @@ export default function page() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { password, confirmpassword } = formData;
+    if (!passwordPattern.test(password)) {
+      toast.error(
+        "Password must include at least one uppercase letter, one digit, and one special character, with a minimum length of 8 characters."
+      );
+      return;
+    }
+
+    if (password !== confirmpassword) {
+      toast.error("Passwords do not match.");
+      return;
+    }
+
+    toast.success("Form submitted successfully!");
+    router.push("/");
   };
 
   console.log("The form data is now ", formData);
