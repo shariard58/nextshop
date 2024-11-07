@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { BsCart2 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 import { IoSearchOutline } from "react-icons/io5";
@@ -8,9 +9,9 @@ export default function LowerHeader() {
     <div className="grid md:grid-cols-12 gap-[0px] py-[12px]">
       <div className="md:col-span-2"></div>
       <div className="md:col-span-8 grid md:grid-cols-8   gap-[10px]">
-        <div className="md:col-span-1  flex  items-center">
+        <Link href="/" className="md:col-span-1  flex  items-center">
           <Image src="/images/logo.jpg" alt="logo" width={120} height={130} />
-        </div>
+        </Link>
         <div className="md:col-span-4 border border-[#EFF0F5] bg-[#EFF0F5]  relative rounded-xl overflow-hidden">
           <input
             type="text"
