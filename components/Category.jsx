@@ -35,22 +35,6 @@ export default function Category() {
     setShowCategories(false);
   };
 
-  useEffect(() => {
-    const fetchAllDatas = async () => {
-      try {
-        const response = await fetch(
-          "https://api.shope.com.bd/api/v1/public/hero-categories"
-        );
-        const apiData = await response.json();
-        setData(apiData);
-      } catch (err) {
-        console.error("Failed to fetch data");
-      }
-    };
-
-    fetchAllDatas();
-  }, []);
-
   return (
     <div className="relative ">
       <button
