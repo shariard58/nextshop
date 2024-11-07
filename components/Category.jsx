@@ -43,7 +43,7 @@ export default function Category() {
         onMouseEnter={handleShowCategory}
         className="mt-4 py-2 px-6 bg-white text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200"
       >
-        Categories
+        Show Categories
       </button>
 
       {showCategories && data && data.length > 0 && (
