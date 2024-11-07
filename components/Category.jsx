@@ -6,9 +6,23 @@ export default function Category() {
   const [showCategories, setShowCategories] = useState(false);
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const [hoveredSubCategories, setHoveredSubCategories] = useState(null);
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
-  console.log("The hovered category is", hoveredCategory);
+  useEffect(() => {
+    const fetchAllDatas = async () => {
+      try {
+        const response = await fetch(
+          "https://api.shope.com.bd/api/v1/public/hero-categories"
+        );
+        const apiData = await response.json();
+        setData(apiData);
+      } catch (err) {
+        console.error("Failed to fetch data");
+      }
+    };
+
+    fetchAllDatas();
+  }, []);
 
   // functoin for showing category
   const handleShowCategory = () => {
