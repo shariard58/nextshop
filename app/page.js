@@ -1,14 +1,16 @@
 "use client";
 import Category from "@/components/Category";
 import Header from "@/components/Header";
+import MobileFooter from "@/components/MobileFooter";
 import MobileHeader from "@/components/MobileHeader";
 import SliderBanner from "@/components/SliderBanner";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative h-[90vh]">
       <Header className="hidden md:block" />
       <MobileHeader />
+      <MobileFooter />
 
       <div>
         <SliderBanner />
