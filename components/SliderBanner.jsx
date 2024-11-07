@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-no-undef */
 "use client";
+import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -15,55 +16,69 @@ export default function SliderBanner() {
   };
   return (
     <Slider {...settings}>
-      <div>
-        <img
-          className="md:h-[500px] lg:h-[600px]"
+      <div className="w-full relative h-[600px]">
+        <Image
+          className="w-full relative h-full"
           src="/images/banner.jpg"
           alt="img"
+          height={500}
+          width={1600}
         />
       </div>
-      <div>
-        <img
-          className="md:h-[500px] lg:h-[600px]"
+      <div className="w-full relative h-[500px]">
+        <Image
+          className="w-full relative h-full"
           src="/images/banner.jpg"
           alt="img"
+          height={500}
+          width={1600}
         />
       </div>
-      <div>
-        <img
-          className="md:h-[500px] lg:h-[600px]"
+      <div className="w-full relative h-[500px]">
+        <Image
+          className="w-full relative h-full"
           src="/images/banner.jpg"
           alt="img"
-        />
-      </div>
-
-      <div>
-        <img
-          className="md:h-[500px] lg:h-[600px]"
-          src="/images/banner.jpg"
-          alt="img"
-        />
-      </div>
-      <div>
-        <img
-          className="md:h-[500px] lg:h-[600px]"
-          src="/images/banner.jpg"
-          alt="img"
-        />
-      </div>
-      <div>
-        <img
-          className="md:h-[500px] lg:h-[600px]"
-          src="/images/banner.jpg"
-          alt="img"
+          height={500}
+          width={1600}
         />
       </div>
 
-      <div>
-        <img
-          className="md:h-[500px] lg:h-[600px]"
+      <div className="w-full relative h-[500px]">
+        <Image
+          className="w-full relative h-full"
           src="/images/banner.jpg"
           alt="img"
+          height={500}
+          width={1600}
+        />
+      </div>
+      <div className="w-full relative h-[500px]">
+        <Image
+          className="w-full relative h-full"
+          src="/images/banner.jpg"
+          alt="img"
+          height={500}
+          width={1600}
+        />
+      </div>
+      <div className="w-full relative h-[500px]">
+        <Image
+          className="w-full relative h-full"
+          src="/images/banner.jpg"
+          alt="img"
+          height={500}
+          width={1600}
+        />
+      </div>
+
+      <div className="w-full relative h-[500px]">
+        <Image
+          className="w-full relative h-full"
+          src="/images/banner.jpg"
+          alt="img"
+          height={500}
+          width={1600}
         />
       </div>
     </Slider>
