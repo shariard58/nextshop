@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { IoIosArrowUp } from "react-icons/io";
 export default function UpperHeader() {
   return (
@@ -17,11 +18,15 @@ export default function UpperHeader() {
           <div className="w-[80vh]  flex gap-[22px] ">
             <p className="text-[12px] text-[#434343]">Help Center</p>
             <p className="text-[12px] text-[#434343]">Helpline: 0964781656</p>
-            <div className="flex justify-start items-start gap-[4px]">
+
+            <Link
+              href="/signup-login"
+              className="flex justify-start items-start gap-[4px]"
+            >
               <p className="text-[12px] text-[#F97316]">sign up</p>
               <p className="text-[12px] text-[#F97316]">/</p>
               <p className="text-[12px] text-[#F97316]">Login</p>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
