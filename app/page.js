@@ -3,11 +3,12 @@ import Category from "@/components/Category";
 import Header from "@/components/Header";
 import MobileFooter from "@/components/MobileFooter";
 import MobileHeader from "@/components/MobileHeader";
+import PopularProducts from "@/components/PopularProducts";
 import SliderBanner from "@/components/SliderBanner";
 
 export default function Home() {
   return (
-    <div className="relative h-[90vh]">
+    <div className="relative h-[100vh] mb-[40px]">
       <Header className="hidden md:block" />
       <MobileHeader />
       <MobileFooter />
@@ -22,6 +23,10 @@ export default function Home() {
           <Category />
         </div>
         <div className="md:col-span-2"></div>
+      </div>
+
+      <div className="mt-[20px]">
+        <PopularProducts />
       </div>
     </div>
   );

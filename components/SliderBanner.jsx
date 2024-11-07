@@ -16,7 +16,7 @@ export default function SliderBanner() {
   };
   return (
     <Slider {...settings}>
-      <div className="w-full relative h-[450px] md:h-[600px]">
+      <div className="w-full relative h-[450px] md:h-[500px]">
         <Image
           className="w-full relative h-full"
           src="/images/banner.jpg"
@@ -24,7 +24,7 @@ export default function SliderBanner() {
           layout="fill"
         />
       </div>
-      <div className="w-full relative h-[450px] md:h-[600px]">
+      <div className="w-full relative h-[450px] md:h-[500px]">
         <Image
           className="w-full relative h-full"
           src="/images/banner.jpg"
@@ -32,32 +32,7 @@ export default function SliderBanner() {
           layout="fill"
         />
       </div>
-      <div className="w-full relative h-[450px] md:h-[600px]">
-        <Image
-          className="w-full relative h-full"
-          src="/images/banner.jpg"
-          alt="img"
-          layout="fill"
-        />
-      </div>
-
-      <div className="w-full relative h-[450px] md:h-[600px]">
-        <Image
-          className="w-full relative h-full"
-          src="/images/banner.jpg"
-          alt="img"
-          layout="fill"
-        />
-      </div>
-      <div className="w-full relative h-[450px] md:h-[600px]">
-        <Image
-          className="w-full relative h-full"
-          src="/images/banner.jpg"
-          alt="img"
-          layout="fill"
-        />
-      </div>
-      <div className="w-full relative h-[450px] md:h-[600px]">
+      <div className="w-full relative h-[450px] md:h-[500px]">
         <Image
           className="w-full relative h-full"
           src="/images/banner.jpg"
@@ -66,7 +41,32 @@ export default function SliderBanner() {
         />
       </div>
 
-      <div className="w-full relative h-[450px] md:h-[600px]">
+      <div className="w-full relative h-[450px] md:h-[500px]">
+        <Image
+          className="w-full relative h-full"
+          src="/images/banner.jpg"
+          alt="img"
+          layout="fill"
+        />
+      </div>
+      <div className="w-full relative h-[450px] md:h-[500px]">
+        <Image
+          className="w-full relative h-full"
+          src="/images/banner.jpg"
+          alt="img"
+          layout="fill"
+        />
+      </div>
+      <div className="w-full relative h-[450px] md:h-[500px]">
+        <Image
+          className="w-full relative h-full"
+          src="/images/banner.jpg"
+          alt="img"
+          layout="fill"
+        />
+      </div>
+
+      <div className="w-full relative h-[450px] md:h-[500px]">
         <Image
           className="w-full relative h-full"
           src="/images/banner.jpg"
