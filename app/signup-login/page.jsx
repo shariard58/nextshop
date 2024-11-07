@@ -51,15 +51,15 @@ export default function page() {
 
   console.log("The form data is now ", formData);
   return (
-    <div className="min-h-screen flex justify-center items-center bg-[#F0F0F0 px-4 ">
+    <div className="h-[94vh] flex justify-center items-center bg-[#F0F0F0] px-4 ">
       <div className="w-full  sm:w-[80%] md:w-[60%]  lg:px-[74px] md:px-[60px]  lg:py-[40px] md:py-[36px] sm:py-[30px]  bg-white rounded-lg shadow-lg px-4">
         <form
           onSubmit={handleSubmit}
-          className="w-full flex flex-col  md:flex-row  lg:gap-[44px] md:gap-[30px] gap-[26px]  sm:mt-4 md:mt-0"
+          className="w-full flex flex-col  md:flex-row  lg:gap-[44px] md:gap-[30px] gap-[6px] py-6"
         >
           <div className="space-y-4 md:flex-1 ">
             <div>
-              <p className="md:text-[20px] text-[18px] font-bold">
+              <p className="md:text-[20px] text-[18px] font-bold text-center md:text-left">
                 Welcome to Alzaf.com
               </p>
             </div>
@@ -168,8 +168,8 @@ export default function page() {
             </div>
           </div>
 
-          <div className="space-y-4 md:flex-1 gap-[10px]">
-            <p className="text-[18px] md:text-[20px] text-[#F97316] font-bold md:text-end  text-left">
+          <div className="space-y-2 md:space-y-4  md:flex-1 gap-[10px]">
+            <p className="text-[18px] md:text-[20px] text-[#F97316] font-bold md:text-end hidden md:block  text-left">
               Login
             </p>
 
@@ -180,7 +180,7 @@ export default function page() {
                   <select
                     name="month"
                     id="month"
-                    className="p-2 border rounded border-[#DFDFDF] col-span-1"
+                    className="p-1 md:p-2 border rounded border-[#DFDFDF] col-span-1"
                     defaultValue=""
                     required
                     onChange={handleChange}
@@ -198,7 +198,7 @@ export default function page() {
                   <select
                     name="day"
                     id="day"
-                    className="p-2 border rounded border-[ #DFDFDF] col-span-1"
+                    className="p-1 md:p-2 border rounded border-[ #DFDFDF] col-span-1"
                     defaultValue=""
                     required
                     onChange={handleChange}
@@ -215,7 +215,7 @@ export default function page() {
                   <select
                     name="year"
                     id="year"
-                    className="p-2 border rounded border-[ #DFDFDF] col-span-1"
+                    className="p-1 md:p-2  border rounded border-[ #DFDFDF] col-span-1"
                     defaultValue=""
                     onChange={handleChange}
                     required
@@ -231,10 +231,10 @@ export default function page() {
                   </select>
                 </div>
               </div>
-              <div className="col-span-1 ">
-                <p className="text-[#434343] mb-[6px]">Gender</p>
+              <div className="w-full col-span-1">
+                <p className="text-[#434343] mb-[4px] ">Gender</p>
                 <select
-                  className="p-2 border rounded border-[ #DFDFDF]"
+                  className="border p-1 md:p-2 rounded border-[ #DFDFDF] w-full"
                   name="gender"
                   id="gender"
                   required
