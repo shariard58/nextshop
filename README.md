@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# next shop 🎬
 
-## Getting Started
+This is a partial e-comerce project where I will have a hero section of e-comerce website and a login page 
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Check out the live demo here: https://nextshop-gamma.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Hero Section**: A reponsive slider hero section.
+- **Category , subCategory and SubSubCategory**: The home page hero section shows dynamic data of category , subCategory and subsubCategory
+- **Product Section **: A Product Section in Home Page 
+- **Password Varificaton **: Passowrd variactaion in login form.
+- **Notification **: PopUp notification with react toast 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Pages
 
-To learn more about Next.js, take a look at the following resources:
+1. **Home Page**:  
+   - Responsive Hero Section with Slider
+   - Can show respective subCategory , subsubCategory of a selective category
+   - A bunch of products list 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Login Page**:  
+   - Shows a Login and Signup form both 
+   - Password validation with React Toast .
+   - A small Authencation experience was added (Not actual authenctioan)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js** (App Router)
+- **Browser Fetch api** for data fetching 
+- **Tailwind CSS** for styling
+- **React Toast** for notifications
+- **React Slick** for Slider 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Installation
+
+To run this project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/shariard58/nextshop
+2. nstall dependencies:
+   cd nextshop
+   npm install
+
+
+5.Local Link 
+ http://localhost:3000
+  
+
+
