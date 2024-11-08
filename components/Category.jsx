@@ -35,13 +35,12 @@ export default function Category() {
     setShowCategories(false);
   };
 
-  // function for hiding subCategory
-  const handleHideSubCategory = () => {
-    setHoveredCategory(null);
-    setHoveredSubCategories(null);
-  };
   const handleHoverCategory = (category) => {
     setHoveredCategory(category);
+  };
+
+  const handleLeaveSubCategoryDiv = () => {
+    setHoveredCategory(null);
   };
 
   return (
@@ -54,10 +53,13 @@ export default function Category() {
       </button>
 
       {showCategories && data && data.length > 0 && (
-        <div className="flex absolute top-0 left-0 transition-opacity duration-200 mt-[-2.5px]">
+        <div
+          onMouseLeave={handleHideCategory}
+          className="flex absolute top-0 left-0 transition-opacity duration-200 mt-[-2.5px]"
+        >
           <div
-            onMouseLeave={handleHideCategory}
-            className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px]"
+            onMouseEnter={() => handleShowCategory()}
+            className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px] "
           >
             <div className="border-r-[2px] border-r-gray-300">
               {data.map((category) => (
@@ -87,16 +89,12 @@ export default function Category() {
           {hoveredCategory?.childrens &&
             hoveredCategory?.childrens.length > 0 && (
               <div
-                onMouseEnter={handleShowCategory}
-                onMouseLeave={handleHideSubCategory}
+                onMouseLeave={handleLeaveSubCategoryDiv}
                 className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px] border-r-gray-300 border-r-[2px]"
               >
                 {hoveredCategory.childrens.map((subCategory, index) => (
                   <div key={index}>
-                    <div
-                      onMouseEnter={() => setHoveredSubCategories(subCategory)}
-                      className="flex justify-between items-center py-[4px]"
-                    >
+                    <div className="flex justify-between items-center py-[4px]">
                       <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
                         {subCategory.title ?? ""}
                       </p>
@@ -108,24 +106,6 @@ export default function Category() {
                             size={20}
                           />
                         )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-          {hoveredSubCategories?.childrens &&
-            hoveredSubCategories?.childrens.length > 0 && (
-              <div
-                onMouseLeave={() => setHoveredSubCategories(null)}
-                className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px]"
-              >
-                {hoveredSubCategories.childrens.map((subSubCategory, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between items-center py-[4px]">
-                      <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
-                        {subSubCategory.title ?? ""}
-                      </p>
                     </div>
                   </div>
                 ))}
