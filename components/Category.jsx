@@ -47,6 +47,10 @@ export default function Category() {
     setHoveredSubCategories(subCategory);
   };
 
+  const handleLeaveSubSubCategory = () => {
+    setHoveredSubCategories(null);
+  };
+
   return (
     <div className="relative ">
       <button
@@ -122,7 +126,7 @@ export default function Category() {
                 {hoveredSubCategories?.childrens &&
                   hoveredSubCategories?.childrens.length > 0 && (
                     <div
-                      onMouseLeave={() => setHoveredSubCategories(null)}
+                      onMouseLeave={handleLeaveSubSubCategory}
                       className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px]"
                     >
                       {hoveredSubCategories.childrens.map(
