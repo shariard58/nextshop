@@ -38,9 +38,13 @@ export default function Category() {
   const handleHoverCategory = (category) => {
     setHoveredCategory(category);
   };
-
+  // while leaving the middle div
   const handleLeaveSubCategoryDiv = () => {
     setHoveredCategory(null);
+  };
+  // strogin the subcategory value for sub sub category
+  const handleHoverSubCategory = (subCategory) => {
+    setHoveredSubCategories(subCategory);
   };
 
   return (
@@ -88,28 +92,53 @@ export default function Category() {
           </div>
           {hoveredCategory?.childrens &&
             hoveredCategory?.childrens.length > 0 && (
-              <div
-                onMouseLeave={handleLeaveSubCategoryDiv}
-                className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px] border-r-gray-300 border-r-[2px]"
-              >
-                {hoveredCategory.childrens.map((subCategory, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between items-center py-[4px]">
-                      <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
-                        {subCategory.title ?? ""}
-                      </p>
-                      {subCategory?.childrens &&
-                        subCategory?.childrens.length > 0 && (
-                          <MdKeyboardArrowRight
-                            className="cursor-pointer"
-                            color="orange"
-                            size={20}
-                          />
-                        )}
+              <>
+                <div
+                  onMouseLeave={() => setHoveredSubCategories(null)}
+                  className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px] border-r-gray-300 border-r-[2px]"
+                >
+                  {hoveredCategory.childrens.map((subCategory, index) => (
+                    <div key={index}>
+                      <div
+                        onMouseEnter={() => handleHoverSubCategory(subCategory)}
+                        className="flex justify-between items-center py-[4px]"
+                      >
+                        <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                          {subCategory.title ?? ""}
+                        </p>
+                        {subCategory?.childrens &&
+                          subCategory?.childrens.length > 0 && (
+                            <MdKeyboardArrowRight
+                              className="cursor-pointer"
+                              color="orange"
+                              size={20}
+                            />
+                          )}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+
+                {hoveredSubCategories?.childrens &&
+                  hoveredSubCategories?.childrens.length > 0 && (
+                    <div
+                      onMouseLeave={() => setHoveredSubCategories(null)}
+                      className="bg-white shadow-md sm:w-[180px] md:w-[240px] lg:w-[270px] py-2 px-[2px]"
+                    >
+                      {hoveredSubCategories.childrens.map(
+                        (subSubCategory, index) => (
+                          <div key={index}>
+                            <div className="flex justify-between items-center py-[4px]">
+                              <p className="text-[16px] cursor-pointer hover:text-orange-400 hover:font-bold flex-grow text-start ml-2">
+                                {subSubCategory.title ?? ""}
+                              </p>
+                            </div>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  )}
+              </>
             )}
         </div>
       )}
